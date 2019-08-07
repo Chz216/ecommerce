@@ -1,0 +1,10 @@
+<div class="pull-xs-right">
+  <small>
+    <span class="item" *ngIf="cart.itemCount > 0">
+      {{cart.itemCount}} item (s)
+      {{cart.cartPrice | currency: "USD": true:"2.2-2"}}
+    </span>
+    <span class="empty" *ngIf="cart.itemCount == 0"></span>
+    <button class="btn cart" [disabled]="cart.itemCount == 0" routerLink="/cart"></button>
+  </small>
+</div>

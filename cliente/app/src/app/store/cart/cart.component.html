@@ -1,0 +1,32 @@
+<app-nav></app-nav>
+<div class="container">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Buy Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">SubTotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of cartLine">
+      <td>{{ p.product.productName }}</td>
+      <td>{{ p.product.MSRP | currency: "USD": true:"2.2-2"}}</td>
+      <td class="input-group">
+        <input class="form-control col-2" type="number" [value]="p.quantity" (change)="changeQuantity(p.product,$event.target.value);" pattern="[A-Za-z0-9]+">
+        <button class="btn btn-danger" (click)="deleteCartLine(p.product);"><i class="fas fa-trash"></i></button>
+      </td>
+      <td>{{ p.lineTotal | currency: "USD": true:"2.2-2"}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Total:</td>
+      <td>{{ cart.cartPrice | currency: "USD": true:"2.2-2"}}</td>        
+    </tr>
+  </tbody>
+
+</table>
+</div>
+<app-footer></app-footer>

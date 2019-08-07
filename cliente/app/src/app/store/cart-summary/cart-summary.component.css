@@ -1,0 +1,21 @@
+.cart::before{
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  content: '\f07a';
+  color: #fff;
+}
+
+.empty::before{
+  position: relative;
+  content: '(Empty)';
+  top: .2em;
+  color: #fff;
+  font-size: 12px;
+}
+
+.item{
+  position: relative;
+  top: .2em;
+  color: #fff;
+  font-size: 12px;
+}
