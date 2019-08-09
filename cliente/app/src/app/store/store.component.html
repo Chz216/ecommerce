@@ -22,10 +22,10 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4" *ngFor="let p of products">
           <div class="card h-100">
-            <a><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
+            <a routerLink="{{p.productCode}}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body" routerLink="{{p.productCode}}">
               <h5 class="card-title text-center">
-                <a routerLink="{{p.productCode}}">{{p.productName}}</a>
+                <a href="javascript:;">{{p.productName}}</a>
               </h5>
             </div>
             <div class="card-body">
