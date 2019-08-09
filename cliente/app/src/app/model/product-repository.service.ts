@@ -28,6 +28,7 @@ export class ProductRepositoryService {
     return this.products.filter((p) => (productLine == null || p.productLine === productLine) && (productScale == null || p.productScale === productScale) && (productVendor == null || p.productVendor === productVendor));
   }
 
+
   getCategories(): string[]{
     return this.categories;
   }
@@ -39,4 +40,9 @@ export class ProductRepositoryService {
   getVendors(): string[]{
     return this.vendors;
   }
+
+  getProduct(productCode: string): Product[]{
+    return this.products.filter((p) => (p.productCode === productCode));
+  } 
+
 }
